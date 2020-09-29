@@ -1,6 +1,6 @@
 desc 'Update statistics'
 task :update_statistics => :environment do
-  uri = URI('http://127.0.0.1:4567/samples/api_response.json')
+  uri = URI(ENV['url'] || 'http://127.0.0.1:4567/samples/api_response.json')
 
   begin
     response = Net::HTTP.get(uri)
